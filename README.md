@@ -1,7 +1,7 @@
 1.getElementById is js method returns element with a specified value.
 getElementsByClassName() is js method returns  collection of elements with  specified class names.
-querySelector() is js method returns the first element that matches
-querySelectorAll() is js method returns the all element that matches
+querySelector() is js method returns the first element that matches.
+querySelectorAll() is js method returns the all element that matches.
 
 2.document.createElement() method is used to create a new html element node.
 appendChild() appends the new element as the last child of a specified parent element.
