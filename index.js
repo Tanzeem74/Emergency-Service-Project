@@ -5,15 +5,9 @@ function heartCount(id) {
         document.getElementById('heart-count').innerText = count;
     })
 }
-heartCount('heart-icon1');
-heartCount('heart-icon2');
-heartCount('heart-icon3');
-heartCount('heart-icon4');
-heartCount('heart-icon5');
-heartCount('heart-icon6');
-heartCount('heart-icon7');
-heartCount('heart-icon8');
-heartCount('heart-icon9');
+for(let i=1;i<=9;i++){
+    heartCount('heart-icon'+i);
+}
 
 const callHistoryData = [];
 
@@ -210,7 +204,38 @@ function update() {
     }
 }
 
-document.getElementById('clear-btn').addEventListener('click',function(){
+document.getElementById('clear-btn').addEventListener('click', function () {
+    callHistoryData.length = 0;
     const callContainer = document.getElementById("call-container")
     callContainer.innerHTML = "";
 })
+
+function copyCount(id){
+    document.getElementById(id).addEventListener('click', function () {
+    let count = parseInt(document.getElementById('copy-count').innerText);
+    count++;
+    document.getElementById('copy-count').innerText = count;
+})
+}
+for(let i=1;i<=9;i++){
+    copyCount('copy-btn'+i);
+}
+// from chatgpt
+function copyText(id) {
+    // Step 1: Get the text element
+    const textElement = document.getElementById(id);
+
+    // Step 2: Get the text content
+    const text = textElement.innerText;
+
+    // Step 3: Copy the text to clipboard
+    navigator.clipboard.writeText(text)
+        .then(() => {
+            // Notify the user if copy is successful
+            alert("Text has been copied!");
+        })
+        .catch(err => {
+            // Log error if something goes wrong
+            console.error("Failed to copy: ", err);
+        });
+}
